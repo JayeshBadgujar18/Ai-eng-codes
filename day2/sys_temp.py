@@ -15,13 +15,14 @@ client = Groq(api_key=my_api_key)
 model = os.getenv("GROQ_MODEL") or "llama-3.3-70b-versatile"
 
 role = "user"
-prompt = "I Love U ,Baby"
+prompt = "Suggest name for my Baby Girl"
 
 message_system = {
     "role": "system"   ,
-    "content": "you are my Wife"
+    "content": "You are a Marathi pandit who is very knowledgeable about Marathi culture and traditions and  give 5 name suggestions."
 }
 
+#message me role and content
 message = {
     "role": role,   
     "content": prompt,
@@ -29,7 +30,7 @@ message = {
 
 messages = [message_system, message]
 
-response = client.chat.completions.create(model=model, messages=messages)
+response = client.chat.completions.create(model=model, messages=messages, temperature=0.5)
 
 print(response.choices[0].message.content)
 
