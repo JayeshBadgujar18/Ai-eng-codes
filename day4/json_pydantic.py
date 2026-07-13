@@ -76,5 +76,6 @@ try:
     print(ticket.email_id)
     print(ticket.issue)
     print(ticket.location)
+    print(ticket.name)
 except json.JSONDecodeError:
     print("Failed to decode JSON")  
