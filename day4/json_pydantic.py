@@ -18,10 +18,7 @@ role = "user"
 text="Hello ,My name is Jayesh Badgujar and My Hp Victus Laptop is not working properly. I have tried to restart it but it is not working. Can you please help me to fix it? I live in Pune and I have a warranty for my laptop. Please suggest me the best way to get it repaired.my email id is jayesh.badgujar@example.com and my contact number is +91-9876543210. I would appreciate your prompt assistance in resolving this issue. Thank you."
 prompt = f"""""This is Customer Ticket . Extract Information from this text: {text} """
 
-message_system = {
-    "role": "system"   ,
-    "content": "Extract the following information from the given text: Name, Issue, Location, Warranty Status, Email ID, Contact Number. Provide the extracted information in JSON format."
-}
+
 
 #message me role and content
 message = {
@@ -29,7 +26,7 @@ message = {
     "content": prompt,
 }
 
-messages = [message_system, message]
+messages = [ message]
 
 response = client.chat.completions.create(model=model, messages=messages)
 
